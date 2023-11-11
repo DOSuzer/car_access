@@ -3,7 +3,7 @@ import graphene
 from graphene_django.types import ObjectType
 
 from .models import Car
-from .mutations import CreateCarMutation, UpdateCarMutation
+from .mutations import CreateCarMutation, DeleteCarMutation, UpdateCarMutation
 from .types import CarType
 
 
@@ -21,6 +21,7 @@ class Query(ObjectType):
 class Mutation(graphene.ObjectType):
     create_car = CreateCarMutation.Field()
     update_car = UpdateCarMutation.Field()
+    delete_car = DeleteCarMutation.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
