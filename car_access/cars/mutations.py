@@ -6,10 +6,10 @@ from .types import CarType
 
 
 class CarInput(graphene.InputObjectType):
-    brand = graphene.String()
-    model = graphene.String()
-    plate_number = graphene.String()
-    owners_name = graphene.String()
+    brand = graphene.String(required=True)
+    model = graphene.String(required=True)
+    plate_number = graphene.String(required=True)
+    owners_name = graphene.String(required=True)
 
 
 class CreateCarMutation(graphene.Mutation):

@@ -18,9 +18,9 @@ class Query(ObjectType):
         return Car.objects.get(pk=car_id)
 
 
-class Mutation(ObjectType):
-    create_car = graphene.Field(CreateCarMutation)
-    update_car = graphene.Field(UpdateCarMutation)
+class Mutation(graphene.ObjectType):
+    create_car = CreateCarMutation.Field()
+    update_car = UpdateCarMutation.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
